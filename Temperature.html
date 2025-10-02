@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter - METRICX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <span class="brand-name">METRICX</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Conversions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="length.html">• Length</a></li>
+                            <li><a class="dropdown-item" href="area.html">• Area</a></li>
+                            <li><a class="dropdown-item" href="mass.html">• Mass</a></li>
+                            <li><a class="dropdown-item" href="temperature.html">• Temperature</a></li>
+                            <li><a class="dropdown-item" href="currency.html">• Currency</a></li>
+                            <li><a class="dropdown-item" href="volume.html">• Volume</a></li>
+                            <li><a class="dropdown-item" href="speed.html">• Speed</a></li>
+                            <li><a class="dropdown-item" href="energy.html">• Energy</a></li>
+                            <li><a class="dropdown-item" href="time.html">• Time</a></li>
+                            <li><a class="dropdown-item" href="pressure.html">• pressure</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articles.html">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title" data-aos="fade-up">Tempurature Converter</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Enter temps (comma separated) →
+                        Click Update.Temperatures assumed in °C (you can input Fahrenheit too, but chart will simply
+                        plot given numbers).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="converter-card" data-aos="fade-up">
+                        <h2 class="converter-title">Temperature Conversion Tool</h2>
+                        <div class="converter-form">
+                            <div class="row">
+                                <!-- From -->
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">From</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="fromValue"
+                                            placeholder="Enter value" step="any">
+                                        <select class="form-select" id="fromUnit">
+                                            <option value="C">Celsius (°C)</option>
+                                            <option value="F">Fahrenheit (°F)</option>
+                                            <option value="K">Kelvin (K)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- To -->
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">To</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="toValue" placeholder="Result"
+                                            readonly>
+                                        <select class="form-select" id="toUnit">
+                                            <option value="C" selected>Celsius (°C)</option>
+                                            <option value="F">Fahrenheit (°F)</option>
+                                            <option value="K">Kelvin (K)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary btn-lg" onclick="swapUnits()">
+                                    <i class="fas fa-exchange-alt"></i> Swap Units
+                                </button>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Conversions -->
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <h3 class="section-title text-center mb-4">Common Temperature Conversions</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="conversion-example">
+                                <h5>0 °C =</h5>
+                                <ul>
+                                    <li>32 °F</li>
+                                    <li>273.15 K</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="conversion-example">
+                                <h5>100 °C =</h5>
+                                <ul>
+                                    <li>212 °F</li>
+                                    <li>373.15 K</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="conversion-example">
+                                <h5>0 K =</h5>
+                                <ul>
+                                    <li>-273.15 °C</li>
+                                    <li>-459.67 °F</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="conversion-example">
+                                <h5>32 °F =</h5>
+                                <ul>
+                                    <li>0 °C</li>
+                                    <li>273.15 K</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Temperature Definition -->
+    <div class="row mt-5 my-4 justify-content-center">
+        <div class="col-lg-10">
+            <div class="definition-card text-center bg-white shadow p-4 rounded-4">
+                <h3 class="mb-3 text-primary">Temperature Definition</h3>
+                <p>
+                    Temperature is a measure of the hotness or coldness of a substance. It represents the average
+                    kinetic energy of the particles in that substance. Higher kinetic energy means a higher temperature,
+                    while lower kinetic energy means a lower temperature.
+                </p>
+                <p>Commonly used temperature scales are:</p>
+                <ul class="list-unstyled">
+                    <li><b>Celsius (°C):</b> Water freezing = 0°C, boiling = 100°C</li>
+                    <li><b>Fahrenheit (°F):</b> Water freezing = 32°F, boiling = 212°F</li>
+                    <li><b>Kelvin (K):</b> Scientific scale, 0 K = Absolute Zero</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">METRICX</h5>
+                    <p class="footer-text">Your ultimate tool for seamless metric conversions. Convert with precision and confidence across all measurement units.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Conversions</h6>
+                    <ul class="footer-links">
+                        <li><a href="./length.html">Length</a></li>
+                        <li><a href="./area.html">Area</a></li>
+                        <li><a href="./Mass.html">Mass</a></li>
+                        <li><a href="./Temperature.html">Temperature</a></li>
+                        <li><a href="./currency.html">Currency</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">More Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="./volume.html">Volume</a></li>
+                        <li><a href="./Speed.html">Speed</a></li>
+                        <li><a href="./Energy.html">Energy</a></li>
+                        <li><a href="./Time.html">Time</a></li>
+                        <li><a href="./pressure.html">Pressure</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="./articles.html">Articles</a></li>
+                        <li><a href="./history.html">History</a></li>
+                        <li><a href="./faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                        <li><a href="./terms.html">Terms of Service</a></li>
+                        <li><a href="./support.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small class="footer-copyright">Copyright &copy; 2025 METRICX. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="footer-made-with">Made with ❤️ for precision and accuracy</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/area-converter.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        function convertTemperature() {
+            let fromValue = parseFloat(document.getElementById("fromValue").value);
+            let fromUnit = document.getElementById("fromUnit").value;
+            let toUnit = document.getElementById("toUnit").value;
+            let resultField = document.getElementById("toValue");
+
+            if (isNaN(fromValue)) {
+                resultField.value = "";
+                return;
+            }
+
+            let celsius;
+
+            // Convert input to Celsius first
+            if (fromUnit === "C") {
+                celsius = fromValue;
+            } else if (fromUnit === "F") {
+                celsius = (fromValue - 32) * 5 / 9;
+            } else if (fromUnit === "K") {
+                celsius = fromValue - 273.15;
+            }
+
+            let result;
+
+            // Convert Celsius to target unit
+            if (toUnit === "C") {
+                result = celsius;
+            } else if (toUnit === "F") {
+                result = (celsius * 9 / 5) + 32;
+            } else if (toUnit === "K") {
+                result = celsius + 273.15;
+            }
+
+            resultField.value = result.toFixed(2);
+        }
+
+        // Add event listeners for dynamic conversion like length converter
+        document.getElementById("fromValue").addEventListener("input", convertTemperature);
+        document.getElementById("fromUnit").addEventListener("change", convertTemperature);
+        document.getElementById("toUnit").addEventListener("change", convertTemperature);
+
+        function swapUnits() {
+            let fromUnit = document.getElementById("fromUnit");
+            let toUnit = document.getElementById("toUnit");
+            let temp = fromUnit.value;
+            fromUnit.value = toUnit.value;
+            toUnit.value = temp;
+
+            let fromValue = document.getElementById("fromValue");
+            let toValue = document.getElementById("toValue");
+            let tempValue = fromValue.value;
+            fromValue.value = toValue.value;
+            toValue.value = tempValue;
+        }
+
+    </script>
+</body>
+
+</html>

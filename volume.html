@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Converter - METRICX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <span class="brand-name">METRICX</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Conversions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="length.html">• Length</a></li>
+                            <li><a class="dropdown-item" href="area.html">• Area</a></li>
+                            <li><a class="dropdown-item" href="mass.html">• Mass</a></li>
+                            <li><a class="dropdown-item" href="temperature.html">• Temperature</a></li>
+                            <li><a class="dropdown-item" href="currency.html">• Currency</a></li>
+                            <li><a class="dropdown-item" href="Volume.html">• Volume</a></li>
+                            <li><a class="dropdown-item" href="speed.html">• Speed</a></li>
+                            <li><a class="dropdown-item" href="energy.html">• Energy</a></li>
+                            <li><a class="dropdown-item" href="time.html">• Time</a></li>
+                            <li><a class="dropdown-item" href="pressure.html">• pressure</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faqs-section">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="page-title" data-aos="fade-up">Volume Converter</h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Convert liters, milliliters, gallons, and more</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="converter-card" data-aos="fade-up">
+          <h2 class="converter-title">Volume Conversion Tool</h2>
+          <div class="converter-form">
+            <div class="row">
+              <!-- From -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">From</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="fromValue" placeholder="Enter value" step="any">
+                  <select class="form-select" id="fromUnit">
+                    <option value="liter">Liter (L)</option>
+                    <option value="milliliter">Milliliter (mL)</option>
+                    <option value="cubic_meter">Cubic Meter (m³)</option>
+                    <option value="cubic_centimeter">Cubic Centimeter (cm³)</option>
+                    <option value="cubic_inch">Cubic Inch (in³)</option>
+                    <option value="cubic_foot">Cubic Foot (ft³)</option>
+                    <option value="cubic_yard">Cubic Yard (yd³)</option>
+                    <option value="gallon_us">Gallon (US)</option>
+                    <option value="gallon_uk">Gallon (UK)</option>
+                  </select>
+                </div>
+              </div>
+              <!-- To -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">To</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="toValue" placeholder="Result" readonly>
+                  <select class="form-select" id="toUnit">
+                    <option value="liter">Liter (L)</option>
+                    <option value="milliliter">Milliliter (mL)</option>
+                    <option value="cubic_meter">Cubic Meter (m³)</option>
+                    <option value="cubic_centimeter">Cubic Centimeter (cm³)</option>
+                    <option value="cubic_inch">Cubic Inch (in³)</option>
+                    <option value="cubic_foot" selected>Cubic Foot (ft³)</option>
+                    <option value="cubic_yard">Cubic Yard (yd³)</option>
+                    <option value="gallon_us">Gallon (US)</option>
+                    <option value="gallon_uk">Gallon (UK)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary btn-lg" onclick="swapUnits()">
+                <i class="fas fa-exchange-alt"></i> Swap Units
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Common Conversions -->
+    <div class="row mt-5">
+      <div class="col-12" data-aos="fade-up">
+        <h3 class="section-title text-center mb-4">Common Volume Conversions</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="conversion-example white-box">
+              <h5>1 Liter =</h5>
+              <ul>
+                <li>1,000 Milliliters</li>
+                <li>0.001 Cubic Meters</li>
+                <li>61.0237 Cubic Inches</li>
+                <li>0.264172 Gallons (US)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="conversion-example white-box">
+              <h5>1 Gallon (US) =</h5>
+              <ul>
+                <li>3.785 Liters</li>
+                <li>3,785 Milliliters</li>
+                <li>231 Cubic Inches</li>
+                <li>0.133681 Cubic Feet</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Volume Definition & Advantages/Disadvantages -->
+<div class="row mt-5">
+  <div class="col-12">
+    <h3 class="section-title text-center mb-3">What is Volume?</h3>
+    
+    <!-- Definition -->
+    <div class="definition-box">
+      <p><strong>Volume</strong> is the amount of space that an object or substance occupies.
+      It is commonly measured in liters, milliliters, cubic meters, or gallons.
+      For example, a water bottle may hold 1 liter of water, which is its volume.</p>
+    </div>
+
+    <!-- Advantages -->
+    <div class="definition-box">
+      <h5>✅ Advantages of Volume Measurement:</h5>
+      <ul>
+        <li>Helps in measuring liquids and gases accurately.</li>
+        <li>Useful in cooking, medical dosages, and scientific experiments.</li>
+        <li>Essential for industries like construction, shipping, and packaging.</li>
+        <li>Enables conversion between different units (liters, gallons, etc.).</li>
+      </ul>
+    </div>
+
+    <!-- Disadvantages -->
+    <div class="definition-box">
+      <h5>❌ Disadvantages of Volume Measurement:</h5>
+      <ul>
+        <li>Not suitable for irregular-shaped objects without special methods.</li>
+        <li>Temperature and pressure can affect gas volume.</li>
+        <li>May require conversion tables for different unit systems (US vs UK gallons).</li>
+        <li>Measurement errors can occur without proper instruments.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">METRICX</h5>
+                    <p class="footer-text">Your ultimate tool for seamless metric conversions. Convert with precision and confidence across all measurement units.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Conversions</h6>
+                    <ul class="footer-links">
+                        <li><a href="./length.html">Length</a></li>
+                        <li><a href="./area.html">Area</a></li>
+                        <li><a href="./Mass.html">Mass</a></li>
+                        <li><a href="./Temperature.html">Temperature</a></li>
+                        <li><a href="./currency.html">Currency</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">More Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="./volume.html">Volume</a></li>
+                        <li><a href="./Speed.html">Speed</a></li>
+                        <li><a href="./Energy.html">Energy</a></li>
+                        <li><a href="./Time.html">Time</a></li>
+                        <li><a href="./pressure.html">Pressure</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="./articles.html">Articles</a></li>
+                        <li><a href="./history.html">History</a></li>
+                        <li><a href="./faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                        <li><a href="./terms.html">Terms of Service</a></li>
+                        <li><a href="./support.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small class="footer-copyright">Copyright &copy; 2025 METRICX. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="footer-made-with">Made with ❤️ for precision and accuracy</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/volume-converter.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+
+  // Conversion factors relative to 1 Liter
+  const volumeUnits = {
+    liter: 1,
+    milliliter: 1000,
+    cubic_meter: 0.001,
+    cubic_centimeter: 1000,
+    cubic_inch: 61.0237,
+    cubic_foot: 0.0353147,
+    cubic_yard: 0.001308,
+    gallon_us: 0.264172,
+    gallon_uk: 0.219969
+  };
+
+  // Function to convert values
+  function convertVolume() {
+    const fromValue = parseFloat(document.getElementById("fromValue").value);
+    const fromUnit = document.getElementById("fromUnit").value;
+    const toUnit = document.getElementById("toUnit").value;
+
+    if (!isNaN(fromValue)) {
+      // Convert input to liters first
+      const inLiters = fromValue / volumeUnits[fromUnit];
+      // Convert liters to target unit
+      const result = inLiters * volumeUnits[toUnit];
+      document.getElementById("toValue").value = result.toFixed(5);
+    } else {
+      document.getElementById("toValue").value = "";
+    }
+  }
+
+  // Swap units
+  function swapUnits() {
+    const fromUnit = document.getElementById("fromUnit");
+    const toUnit = document.getElementById("toUnit");
+
+    const tempUnit = fromUnit.value;
+    fromUnit.value = toUnit.value;
+    toUnit.value = tempUnit;
+
+    convertVolume();
+  }
+
+  // Event listeners
+  document.getElementById("fromValue").addEventListener("input", convertVolume);
+  document.getElementById("fromUnit").addEventListener("change", convertVolume);
+  document.getElementById("toUnit").addEventListener("change", convertVolume);
+
+
+
+    </script>
+</body>
+</html>
+
+
+

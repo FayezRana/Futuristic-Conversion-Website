@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter - METRICX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <span class="brand-name">METRICX</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Conversions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="length.html">• Length</a></li>
+                            <li><a class="dropdown-item" href="area.html">• Area</a></li>
+                            <li><a class="dropdown-item" href="mass.html">• Mass</a></li>
+                            <li><a class="dropdown-item" href="temperature.html">• Temperature</a></li>
+                            <li><a class="dropdown-item" href="currency.html">• Currency</a></li>
+                            <li><a class="dropdown-item" href="volume.html">• Volume</a></li>
+                            <li><a class="dropdown-item" href="speed.html">• Speed</a></li>
+                            <li><a class="dropdown-item" href="energy.html">• Energy</a></li>
+                            <li><a class="dropdown-item" href="time.html">• Time</a></li>
+                            <li><a class="dropdown-item" href="pressure.html">• pressure</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articles.html">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Page Header -->
+  <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title" data-aos="fade-up">Mass Converter</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Converter between kilogrames, grams, pounds, and more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Converter Section -->
+<section class="py-5 ">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg p-4" data-aos="fade-up">
+          <h2 class="h4 text-center mb-4">Mass Conversion Tool</h2>
+          <form>
+            <div class="row g-3">
+              <!-- From -->
+              <div class="col-md-6">
+                <label class="form-label">From</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="fromValue" placeholder="Enter value" step="any">
+                  <select class="form-select" id="fromUnit">
+                    <option value="kilogram">Kilogram (kg)</option>
+                    <option value="gram">Gram (g)</option>
+                    <option value="milligram">Milligram (mg)</option>
+                    <option value="tonne">Tonne (t)</option>
+                    <option value="pound">Pound (lb)</option>
+                    <option value="ounce">Ounce (oz)</option>
+                  </select>
+                </div>
+              </div>
+              <!-- To -->
+              <div class="col-md-6">
+                <label class="form-label">To</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="toValue" placeholder="Result" readonly>
+                  <select class="form-select" id="toUnit">
+                    <option value="kilogram" selected>Kilogram (kg)</option>
+                    <option value="gram">Gram (g)</option>
+                    <option value="milligram">Milligram (mg)</option>
+                    <option value="tonne">Tonne (t)</option>
+                    <option value="pound">Pound (lb)</option>
+                    <option value="ounce">Ounce (oz)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Button -->
+            <div class="text-center mt-4">
+              <button type="button" class="btn btn-primary btn-lg" onclick="swapUnits()">
+                <i class="fas fa-exchange-alt"></i> Swap Units
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Examples Section -->
+    <div class="row mt-5">
+      <div class="col-12" data-aos="fade-up">
+        <h3 class="text-center mb-4">Common Mass Conversions</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card shadow-sm p-3 h-100">
+              <h5>1 Kilogram =</h5>
+              <ul class="mb-0">
+                <li>1000 Grams</li>
+                <li>1,000,000 Milligrams</li>
+                <li>2.20462 Pounds</li>
+                <li>35.274 Ounces</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card shadow-sm p-3 h-100">
+              <h5>1 Tonne =</h5>
+              <ul class="mb-0">
+                <li>1000 Kilograms</li>
+                <li>1,000,000 Grams</li>
+                <li>2204.62 Pounds</li>
+                <li>35,274 Ounces</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Mass Definition & FAQs Section -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+
+    <!-- Definition Box -->
+    <div class="col-lg-10 mb-4 zoom-hover">
+      <div class="card shadow-lg p-4 white-box " data-aos="fade-up">
+        <h3 class="text-center mb-3">What is Mass?</h3>
+        <p class="text-muted">
+          <strong>Mass</strong> is a fundamental property of matter that represents the amount of substance or matter in an object.  
+          It is different from weight, as weight depends on gravity, but mass remains constant everywhere in the universe.  
+          The SI unit of mass is <strong>kilogram (kg)</strong>. Other common units include <em>gram (g)</em>, <em>tonne (t)</em>, and <em>pound (lb)</em>.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQs Section -->
+    <div class="col-lg-10 zoom-hover">
+      <div class="card shadow-lg p-4 white-box " data-aos="fade-up">
+        <h3 class="text-center mb-3">Mass FAQs</h3>
+        
+        <div class="accordion" id="massFaqs">
+
+          <!-- FAQ 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1Content">
+                Q1. What is the SI unit of mass?
+              </button>
+            </h2>
+            <div id="faq1Content" class="accordion-collapse collapse show" data-bs-parent="#massFaqs">
+              <div class="accordion-body">
+                The SI unit of mass is <strong>kilogram (kg)</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2Content">
+                Q2. How is mass different from weight?
+              </button>
+            </h2>
+            <div id="faq2Content" class="accordion-collapse collapse" data-bs-parent="#massFaqs">
+              <div class="accordion-body">
+                <strong>Mass</strong> is the amount of matter in an object, while <strong>weight</strong> is the force exerted by gravity on that mass.  
+                Weight changes with gravity, but mass does not.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3Content">
+                Q3. What instruments are used to measure mass?
+              </button>
+            </h2>
+            <div id="faq3Content" class="accordion-collapse collapse" data-bs-parent="#massFaqs">
+              <div class="accordion-body">
+                Instruments like a <strong>balance scale, electronic scale, and spring balance</strong> are commonly used to measure mass.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4Content">
+                Q4. Is mass a scalar or vector quantity?
+              </button>
+            </h2>
+            <div id="faq4Content" class="accordion-collapse collapse" data-bs-parent="#massFaqs">
+              <div class="accordion-body">
+                Mass is a <strong>scalar quantity</strong> because it has magnitude but no direction.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5Content">
+                Q5. Why is mass important in physics?
+              </button>
+            </h2>
+            <div id="faq5Content" class="accordion-collapse collapse" data-bs-parent="#massFaqs">
+              <div class="accordion-body">
+                Mass is essential in physics because it determines an object’s <strong>inertia, momentum, energy, and gravitational attraction</strong>.
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- End Accordion -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">METRICX</h5>
+                    <p class="footer-text">Your ultimate tool for seamless metric conversions. Convert with precision and confidence across all measurement units.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Conversions</h6>
+                    <ul class="footer-links">
+                        <li><a href="./length.html">Length</a></li>
+                        <li><a href="./area.html">Area</a></li>
+                        <li><a href="./Mass.html">Mass</a></li>
+                        <li><a href="./Temperature.html">Temperature</a></li>
+                        <li><a href="./currency.html">Currency</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">More Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="./volume.html">Volume</a></li>
+                        <li><a href="./Speed.html">Speed</a></li>
+                        <li><a href="./Energy.html">Energy</a></li>
+                        <li><a href="./Time.html">Time</a></li>
+                        <li><a href="./pressure.html">Pressure</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="./articles.html">Articles</a></li>
+                        <li><a href="./history.html">History</a></li>
+                        <li><a href="./faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-subtitle">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                        <li><a href="./terms.html">Terms of Service</a></li>
+                        <li><a href="./support.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small class="footer-copyright">Copyright &copy; 2025 METRICX. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="footer-made-with">Made with ❤️ for precision and accuracy</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/area-converter.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const fromValue = document.getElementById('fromValue');
+    const fromUnit = document.getElementById('fromUnit');
+    const toUnit = document.getElementById('toUnit');
+    const toValue = document.getElementById('toValue');
+
+    fromValue.addEventListener('input', convertArea);
+    fromUnit.addEventListener('change', convertArea);
+    toUnit.addEventListener('change', convertArea);
+
+    // Swap button
+    window.swapUnits = function () {
+        const tempUnit = fromUnit.value;
+        fromUnit.value = toUnit.value;
+        toUnit.value = tempUnit;
+        convertArea();
+    };
+
+    function convertArea() {
+        const value = parseFloat(fromValue.value);
+        if (isNaN(value)) {
+            toValue.value = "";
+            return;
+        }
+
+        // Conversion factors (all relative to 1 square meter)
+        const conversionRates = {
+            square_meter: 1,
+            square_kilometer: 1e6,
+            square_centimeter: 0.0001,
+            square_millimeter: 0.000001,
+            square_inch: 0.00064516,
+            square_foot: 0.092903,
+            square_yard: 0.836127,
+            acre: 4046.8564224,
+            hectare: 10000,
+            square_mile: 2.59e6
+        };
+
+        // Convert: source → m² → target
+        const valueInSqm = value * conversionRates[fromUnit.value];
+        const result = valueInSqm / conversionRates[toUnit.value];
+
+        toValue.value = result.toFixed(6); // limit to 6 decimals
+    }
+
+    // Run initial conversion
+    convertArea();
+});
+
+    </script>
+</body>
+</html>
+
+
+
